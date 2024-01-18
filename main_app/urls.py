@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
     #url endpoint, view to render, name of the route
     path('', views.home, name="home"),
+    path('about/', views.about, name ='about'),
 ]
