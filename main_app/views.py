@@ -2,11 +2,6 @@ from django.shortcuts import render
 from .models import Finch
 
 # Create your testing finches here
-'''
-finches = [
-    {'name': 'finchy', 'color': 'white', 'description' : 'lazy finch does not fly' },
-    {'name': 'isabelle', 'color': 'red', 'description' : 'flys high' },
-]'''
 
 #define home view
 def home(request):
@@ -20,6 +15,11 @@ def about(request):
 def finches_index(request):
     finches = Finch.objects.all()
     return render(request, 'finches/index.html', {'finches': finches})
+
+#define details view
+def finches_detail(request, finch_id):
+    finch = Finch.objects.get(id=finch_id)
+    return render(request, 'finches/detail.html', {'finch': finch })
 
 
 
