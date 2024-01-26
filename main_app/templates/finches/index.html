@@ -4,14 +4,14 @@
     <!-- Your content goes here -->
     {% for finch in finches %}
         <div class="card">
-            <!-- <a href="/cats/{{ cat.id }}"> -->
             <a href="{% url 'detail' finch.id %}">
                 <div class="card-content">
                     <span class="card-title">{{ finch.name }}</span>
                     <p>Color: {{ finch.color }}</p>
-                <p>Description: {{ finch.description }}</p>
-                <p>Age: {{ finch.age }}</p>
-
+                    <p>Description: {{ finch.description }}</p>
+                    <p>Age: {{ finch.age }}</p>
+                </div>
+                <!-- Close the div inside the loop -->
             </a>
         </div>
     {% endfor %}

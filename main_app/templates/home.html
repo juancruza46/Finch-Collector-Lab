@@ -1,4 +1,41 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>HOME</h1>
+<h1>HOME</h1>
+    <div class="image-container">
+        <img src="https://i.imgur.com/h4t8W7N.jpeg" alt="Finch Image" width="300" height="200">
+    </div>
 {% endblock %}
+
+{% block additional_styles %}
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #fff; /* Set a background color */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px; /* Set to the desired height */
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin-top as needed */
+        }
+
+        footer.page-footer {
+            margin-top: auto;
+        }
+    </style>
+{% endblock %}
+
+
+
+
+

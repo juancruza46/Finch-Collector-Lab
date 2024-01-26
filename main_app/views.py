@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Finch
 
 # Create your testing finches here
@@ -27,5 +27,15 @@ class FinchCreate(CreateView):
     fields = '__all__'
 
 
+class FinchUpdate(UpdateView):
+    model = Finch
+    # let's make it so you can't rename a cat
+    # we could simply say fields = '__all__', or we can customize like this:
+    fields = ['color', 'description', 'age']
 
+# Delete View - extends DeleteView
+class FinchDelete(DeleteView):
+    model = Finch
+
+    success_url = '/finches'
 
